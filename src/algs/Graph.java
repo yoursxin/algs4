@@ -6,7 +6,7 @@ import edu.princeton.cs.algs4.Bag;
 import edu.princeton.cs.algs4.In;
 
 public class Graph {
-	private static final String NEWLINE = System.getProperty("line.seperator");
+	private static final String NEWLINE = System.getProperty("line.separator");
 	
 	private final int V; // node
 	private int E;
@@ -67,6 +67,9 @@ public class Graph {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		Graph g = new Graph(new In(args[0]));
+		System.out.println(g);
+		
 
 	}
 
