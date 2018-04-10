@@ -1,5 +1,8 @@
 package algs;
 
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
 public class WeightedQuickUnionUF {
 	
 	private int count;
@@ -41,17 +44,30 @@ public class WeightedQuickUnionUF {
 			return;
 		
 		if(sz[p]>sz[q]){
-			id[q]=rootp;
-			sz[q]+=sz[p];
-		}else{
-			id[p]=rootq;
+			id[rootq]=p;
 			sz[p]+=sz[q];
+		}else{
+			id[rootp]=q;
+			sz[q]+=sz[p];
 		}
 		count--;
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		int N = StdIn.readInt();
+		WeightedQuickUnionUF uf = new WeightedQuickUnionUF(N);
+		while(!StdIn.isEmpty()){
+			int p = StdIn.readInt();
+			int q = StdIn.readInt();
+			if(!uf.connected(p, q)){
+				uf.union(p, q);
+				StdOut.println(p+" - "+q);
+			}
+			
+			
+		}	
+		StdOut.println("count:"+uf.count());
+		
 
 	}
 
