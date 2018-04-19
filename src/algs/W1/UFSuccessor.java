@@ -28,6 +28,7 @@ public class UFSuccessor{
 		}
 	}
 	
+	//把已删除的元素进行连接
 	public void remove(int i){
 		data[i] = false;
 		if(i>0 && !data[i-1]){
@@ -39,10 +40,10 @@ public class UFSuccessor{
 	}
 	
 	public int getSuccessor(int i){
-		if(data[i]){
+		if(data[i]){ //未删除的元素，返回该元素
 			return i;
 		}else{
-			int succ =  uf.find(i)+1;
+			int succ =  uf.find(i)+1; //如果i是已被删除的元素，找到删除元素中的最大值，增1后就是未删除元素中距离i最大的
 			if(succ>=N){
 				return -1;
 			}else{

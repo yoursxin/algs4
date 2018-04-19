@@ -13,7 +13,7 @@ import edu.princeton.cs.algs4.*;
  *
  */
 
-public class E1 {
+public class ConnectedUf {
 	
 	public static void main(String[] args){
 		int n = StdIn.readInt();
